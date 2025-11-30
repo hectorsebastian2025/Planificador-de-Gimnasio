@@ -4,5 +4,3 @@ from models import Cliente
 
 st.subheader("Cantidad de Clientes actuales")
 st.info(f"Número de clientes registrados: {contar_clientes()}")
-st.subheader("Disponibilidad de cupos")
-st.info(f"Capacidad disponible: {121-contar_clientes()} cupos disponibles")

@@ -1,10 +1,10 @@
 {
     "gimnasio": {
-        "capacidad_maxima": 121,
+        "capacidad_máxima": 121,
         "horario": {
             "apertura": "08:00",
             "cierre": "20:00",
-            "duracion_turno_horas": 2,
+            "duración_turno_horas": 2,
             "turnos": [
                 "08:00-10:00",
                 "10:00-12:00",
@@ -18,34 +18,34 @@
             {
                 "id": 1,
                 "tipo": "sala",
-                "nombre": "Sala de musculacion",
+                "nombre": "Sala de musculación",
                 "capacidad": 40,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 2,
                 "tipo": "cancha",
-                "nombre": "Cancha de basket",
+                "nombre": "Cancha de básket",
                 "capacidad": 15,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 3,
                 "tipo": "cancha",
-                "nombre": "Cancha de futbol",
+                "nombre": "Cancha de fútbol",
                 "capacidad": 25,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 4,
                 "tipo": "piscina",
-                "nombre": "Piscina semiolimpica",
+                "nombre": "Piscina semiolímpica",
                 "capacidad": 12,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 5,
@@ -53,7 +53,7 @@
                 "nombre": "Sauna",
                 "capacidad": 15,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 6,
@@ -61,7 +61,7 @@
                 "nombre": "Sala de fisioterapia",
                 "capacidad": 2,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 7,
@@ -69,95 +69,95 @@
                 "nombre": "Jacuzzi",
                 "capacidad": 10,
                 "tiempo_estancia_horas": 2,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 8,
                 "tipo": "consultorio",
-                "nombre": "Consultorio medico",
+                "nombre": "Consultorio médico",
                 "capacidad": 1,
                 "tiempo_estancia_horas": 1,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             },
             {
                 "id": 9,
                 "tipo": "especial",
-                "nombre": "Camara hiperbarica",
+                "nombre": "Cámara hiperbárica",
                 "capacidad": 1,
                 "tiempo_estancia_horas": 1,
-                "ocupacion_actual": 0
+                "ocupación_actual": 0
             }
         ],
         "personal": [
             {
                 "id": 1,
                 "rol": "Entrenador",
-                "max_clientes": 10,
+                "máx_clientes": 10,
                 "clientes_actuales": 0
             },
             {
                 "id": 2,
                 "rol": "Entrenador",
-                "max_clientes": 10,
+                "máx_clientes": 10,
                 "clientes_actuales": 0
             },
             {
                 "id": 3,
                 "rol": "Entrenador",
-                "max_clientes": 10,
+                "máx_clientes": 10,
                 "clientes_actuales": 0
             },
             {
                 "id": 4,
                 "rol": "Entrenador",
-                "max_clientes": 10,
+                "máx_clientes": 10,
                 "clientes_actuales": 0
             },
             {
                 "id": 5,
                 "rol": "Fisioterapeuta",
-                "max_clientes": 1,
+                "máx_clientes": 1,
                 "clientes_actuales": 0
             },
             {
                 "id": 6,
                 "rol": "Fisioterapeuta",
-                "max_clientes": 1,
+                "máx_clientes": 1,
                 "clientes_actuales": 0
             },
             {
                 "id": 7,
-                "rol": "Medico del deporte",
-                "max_clientes": 1,
+                "rol": "médico del deporte",
+                "máx_clientes": 1,
                 "clientes_actuales": 0
             },
             {
                 "id": 8,
                 "rol": "Nutricionista",
-                "max_clientes": 1,
+                "máx_clientes": 1,
                 "clientes_actuales": 0
             }
         ],
         "planes": [
             {
-                "nombre": "Basico",
+                "nombre": "Básico",
                 "precio_mensual": 25,
                 "acceso": [
-                    "Sala de musculacion (sin entrenador)",
-                    "Cancha de basket",
-                    "Cancha de futbol",
-                    "Piscina semiolimpica",
+                    "Sala de musculación (sin entrenador)",
+                    "Cancha de básket",
+                    "Cancha de fútbol",
+                    "Piscina semiolímpica",
                     "Sauna"
                 ]
             },
             {
-                "nombre": "Basico con entrenador",
+                "nombre": "Básico con entrenador",
                 "precio_mensual": 40,
                 "acceso": [
-                    "Sala de musculacion (con entrenador)",
-                    "Cancha de basket",
-                    "Cancha de futbol",
-                    "Piscina semiolimpica",
+                    "Sala de musculación (con entrenador)",
+                    "Cancha de básket",
+                    "Cancha de fútbol",
+                    "Piscina semiolímpica",
                     "Sauna"
                 ]
             },
@@ -165,32 +165,32 @@
                 "nombre": "Premium",
                 "precio_mensual": 65,
                 "acceso": [
-                    "Sala de musculacion (sin entrenador)",
-                    "Cancha de basket",
-                    "Cancha de futbol",
-                    "Piscina semiolimpica",
+                    "Sala de musculación (sin entrenador)",
+                    "Cancha de básket",
+                    "Cancha de fútbol",
+                    "Piscina semiolímpica",
                     "Sauna",
-                    "Sala de musculacion (con entrenador)",
+                    "Sala de musculación (con entrenador)",
                     "Sala de fisioterapia",
                     "Jacuzzi",
-                    "Consultorio medico",
-                    "Camara hiperbarica"
+                    "Consultorio médico",
+                    "Cámara hiperbárica"
                 ]
             }
         ],
         "restricciones": [
             "Un cliente no puede reservar dos eventos en el mismo horario.",
-            "Un entrenador puede atender hasta 10 personas a la vez.",
+            "Un entrenador puede atender hasta 4 personas a la vez en un turno.",
             "Los fisioterapeutas, nutricionistas y médicos solo pueden atender a una persona a la vez.",
             "El acceso a cada sala depende del plan del cliente.",
-            "El acceso a la camara hiperbarica requiere autorización del médico del deporte."
+            "El acceso a la Cámara hiperbárica requiere autorización del médico del deporte."
         ],
         "clientes": [
             {
                 "id": 1,
                 "nombre": "Manuel Serrano",
                 "edad": 25,
-                "plan": "Básico con etrenador"
+                "plan": "Básico"
             },
             {
                 "id": 2,
@@ -203,8 +203,21 @@
                 "nombre": "Aylen Chang",
                 "edad": 16,
                 "plan": "Premium"
+            },
+            {
+                "id": 4,
+                "nombre": "Estefany Rodriguez",
+                "edad": 25,
+                "plan": "Básico con entrenador"
             }
         ],
-        "reservas": []
+        "reservas": [
+            {
+                "cliente_id": 3,
+                "recurso_id": 7,
+                "fecha": "2025-12-04",
+                "turno": "10:00-12:00"
+            }
+        ]
     }
 }

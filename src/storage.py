@@ -35,7 +35,7 @@ def cargar_objetos():
         personal = Personal(
             id = p["id"],
             rol = p["rol"],
-            max_clientes = p["max_clientes"],
+            máx_clientes = p["máx_clientes"],
             clientes_actuales = p["clientes_actuales"]
         )
         personal_obj.append(personal)
@@ -48,7 +48,7 @@ def cargar_objetos():
             nombre = r["nombre"],
             capacidad = r["capacidad"],
             tiempo_estancia_horas = r["tiempo_estancia_horas"],
-            ocupacion_actual = r["ocupacion_actual"]
+            ocupación_actual = r["ocupación_actual"]
         )
         recursos_obj.append(recursos)
 
@@ -64,7 +64,7 @@ def contar_clientes():
 def capacidad_gimnasio():
     '''Devuelve la capacidad máxima del gimnasio'''
     datos = cargar_datos()
-    return datos["gimnasio"]["capacidad_maxima"]
+    return datos["gimnasio"]["capacidad_máxima"]
 
 print("Número de clientes:", contar_clientes())
 print("Capacidad del gimnasio:", capacidad_gimnasio())
@@ -75,7 +75,7 @@ def agregar_cliente(cliente: Cliente):
     datos = cargar_datos()
     
     clientes = datos["gimnasio"]["clientes"]
-    capacidad = datos["gimnasio"]["capacidad_maxima"]
+    capacidad = datos["gimnasio"]["capacidad_máxima"]
 
     # Validar capacidad
     if len(clientes) >= capacidad:
@@ -126,7 +126,7 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     recursos = datos["gimnasio"]["recursos"]
     turnos_disponibles = datos["gimnasio"]["horario"]["turnos"]
 
-    # --- 1. Buscar cliente ---
+    # Buscar cliente
     cliente = None
     for c in clientes:
         if c["id"] == cliente_id:
@@ -153,8 +153,8 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     hoy = datetime.now()
     if fecha_dt < hoy:
         raise Exception("No se pueden reservar fechas pasadas.")
-    if fecha_dt > hoy + timedelta(days=30):
-        raise Exception("Solo se permiten reservas hasta 30 días en el futuro.")
+    if fecha_dt > hoy + timedelta(days=7):
+        raise Exception("Solo se permiten reservas hasta 7 días en el futuro.")
 
     # --- 4. Validar turno ---
     if turno not in turnos_disponibles:
@@ -171,6 +171,11 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
         raise Exception("Plan del cliente no encontrado.")
 
     acceso_recurso = recurso["nombre"]
+    if recurso["nombre"] == "Sala de musculación":
+        if "con entrenador" in plan_cliente:
+            acceso_recurso += " (con entrenador)"
+        else:
+            acceso_recurso += " (sin entrenador)"
     if acceso_recurso not in plan_obj["acceso"]:
         raise Exception(f"El cliente no puede acceder a '{acceso_recurso}' con su plan '{plan_cliente}'.")
 
