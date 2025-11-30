@@ -1,13 +1,12 @@
 class Cliente:
-    def __init__(self, nombre, edad, plan, turno):
+    def __init__(self, nombre, id, edad, plan):
         self.id = id
         self.nombre = nombre
         self.edad = edad
         self.plan = plan
-        self.turno = turno
 
     def __repr__(self):
-        return f"Cliente(id={self.id}, nombre='{self.nombre}', plan='{self.plan}', turno='{self.turno}')"
+        return f"Cliente(id={self.id}, nombre='{self.nombre}', plan='{self.plan}')"
 
 class Recurso:
     def __init__(self, id, tipo, nombre, capacidad, tiempo_estancia_horas, ocupacion_actual):
