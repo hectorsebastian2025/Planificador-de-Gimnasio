@@ -1,8 +1,11 @@
 import streamlit as st
 from datetime import date, timedelta
-from storage import cargar_objetos, guardar_datos, cargar_datos, reservar_recurso
+from storage import cargar_objetos, guardar_datos, cargar_datos, reservar_recurso, actualizar_estado
 
 datos = cargar_datos()
+actualizar_estado(datos)
+guardar_datos(datos)
+
 clientes = datos["gimnasio"]["clientes"]
 recursos = datos["gimnasio"]["recursos"]
 turnos = datos["gimnasio"]["horario"]["turnos"]
@@ -10,9 +13,13 @@ turnos = datos["gimnasio"]["horario"]["turnos"]
 if len(clientes) == 0:
     st.warning("No hay clientes registrados.")
 else:
-    cliente_nombres = {f"{c['nombre']} (ID {c['id']})": c["id"] for c in clientes}
-    cliente_seleccionado = st.selectbox("Cliente:", list(cliente_nombres.keys()))
-    cliente_id = cliente_nombres[cliente_seleccionado]
+    clientes_dict = {}
+    for c in clientes:
+        clave = f"{c['nombre']} (ID {c['id']})"
+        valor = c["id"]
+        clientes_dict[clave] = valor
+    cliente_seleccionado = st.selectbox("Cliente:", list(clientes_dict.keys()))
+    cliente_id = clientes_dict[cliente_seleccionado]
 
 hoy = date.today()
 limite = hoy + timedelta(days=7)

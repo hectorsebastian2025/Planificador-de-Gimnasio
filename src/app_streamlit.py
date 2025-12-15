@@ -1,4 +1,9 @@
 import streamlit as st
+from storage import cargar_datos, actualizar_estado, guardar_datos
+
+datos = cargar_datos()
+actualizar_estado(datos)
+guardar_datos(datos)
 
 st.set_page_config(page_title="Gestor del Gimnasio", page_icon="💪", layout="centered")
 
@@ -38,5 +43,12 @@ with st.sidebar.expander("Clientes"):
 
 st.write("Sección de eventos:")
 
-if st.button("Gestión de eventos"):
-    st.switch_page("pages/eventos.py")
+col1, col2 = st.columns(2)
+with col1:
+    if st.button("Reservar evento"):
+        st.switch_page("pages/eventos.py")
+    
+with col2:
+    if st.button("Gestión de Eventos"):
+        st.switch_page("pages/gestion_eventos.py")
+

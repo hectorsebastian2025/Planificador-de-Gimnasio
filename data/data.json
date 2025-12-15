@@ -1,6 +1,6 @@
 {
     "gimnasio": {
-        "capacidad_máxima": 121,
+        "capacidad_máxima": 700,
         "horario": {
             "apertura": "08:00",
             "cierre": "20:00",
@@ -209,14 +209,130 @@
                 "nombre": "Estefany Rodriguez",
                 "edad": 25,
                 "plan": "Básico con entrenador"
+            },
+            {
+                "id": 5,
+                "nombre": "Giulio",
+                "edad": 24,
+                "plan": "Premium"
+            },
+            {
+                "id": 6,
+                "nombre": "Jian",
+                "edad": 19,
+                "plan": "Básico con entrenador"
+            },
+            {
+                "id": 7,
+                "nombre": "Guille",
+                "edad": 19,
+                "plan": "Premium"
             }
         ],
         "reservas": [
             {
-                "cliente_id": 3,
-                "recurso_id": 7,
-                "fecha": "2025-12-04",
-                "turno": "10:00-12:00"
+                "id": 1,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2025-12-14",
+                "turno": "18:00-20:00",
+                "estado": "EN_CURSO"
+            },
+            {
+                "id": 2,
+                "cliente_id": 5,
+                "recurso_id": 5,
+                "fecha": "2025-12-18",
+                "turno": "14:00-16:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 3,
+                "cliente_id": 5,
+                "recurso_id": 4,
+                "fecha": "2025-12-16",
+                "turno": "12:00-14:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 4,
+                "cliente_id": 1,
+                "recurso_id": 5,
+                "fecha": "2025-12-19",
+                "turno": "14:00-16:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 5,
+                "cliente_id": 4,
+                "recurso_id": 5,
+                "fecha": "2025-12-15",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 6,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-15",
+                "turno": "14:00-16:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 7,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-15",
+                "turno": "12:00-14:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 8,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-15",
+                "turno": "16:00-18:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 9,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-15",
+                "turno": "18:00-20:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 10,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-16",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 11,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-16",
+                "turno": "10:00-12:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 12,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-16",
+                "turno": "12:00-14:00",
+                "estado": "CANCELADA"
+            },
+            {
+                "id": 13,
+                "cliente_id": 4,
+                "recurso_id": 2,
+                "fecha": "2025-12-16",
+                "turno": "14:00-16:00",
+                "estado": "ACTIVA"
             }
         ]
     }

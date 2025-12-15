@@ -1,2 +1,1 @@
-print("Número de clientes:", contar_clientes())
-print("Capacidad del gimnasio:", capacidad_gimnasio())
+col1, col2 = st.columns(2)
