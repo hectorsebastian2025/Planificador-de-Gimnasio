@@ -11,6 +11,8 @@ st.title("Gestión de Reservas - Cancelar Evento")
 # --- Selección de cliente ---
 opciones_clientes = {}
 for c in clientes:
+    if c["estado"] == "INACTIVO":
+        continue
     opciones_clientes[f"{c['nombre']} (ID {c['id']})"] = c["id"]
 
 cliente_seleccionado = st.selectbox("Selecciona un cliente:", list(opciones_clientes.keys()))

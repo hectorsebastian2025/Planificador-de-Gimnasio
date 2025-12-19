@@ -15,6 +15,8 @@ if len(clientes) == 0:
 else:
     clientes_dict = {}
     for c in clientes:
+        if c["estado"] == "INACTIVO":
+            continue
         clave = f"{c['nombre']} (ID {c['id']})"
         valor = c["id"]
         clientes_dict[clave] = valor

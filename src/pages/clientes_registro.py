@@ -49,6 +49,6 @@ if st.button("Registrar cliente"):
             plan = plan,
         )
         agregar_cliente(nuevo_cliente)
-        st.success(f"Cliente '{nombre}' registrado exitosamente. Su número de identificación para el gimnasio es")
+        st.success(f"Cliente '{nombre}' registrado exitosamente. Su número de identificación para el gimnasio es {nuevo_cliente.id}.")
     except Exception as e:
         st.error(f"Error al registrar el cliente: {str(e)}")

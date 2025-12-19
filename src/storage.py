@@ -54,7 +54,6 @@ def cargar_objetos():
 
     return personal_obj, recursos_obj
 
-print(cargar_objetos())
 
 def contar_clientes():
     '''Cuenta el número de clientes registrados'''
@@ -69,11 +68,12 @@ def capacidad_gimnasio():
 print("Número de clientes:", contar_clientes())
 print("Capacidad del gimnasio:", capacidad_gimnasio())
 
+#-----------------------------------------------------------------------------------------------------------------------------
+
 def agregar_cliente(cliente: Cliente):
     """Agrega un nuevo cliente al gimnasio si hay capacidad."""
     
     datos = cargar_datos()
-    
     clientes = datos["gimnasio"]["clientes"]
     capacidad = datos["gimnasio"]["capacidad_máxima"]
 
@@ -91,32 +91,39 @@ def agregar_cliente(cliente: Cliente):
         "id": cliente.id,
         "nombre": cliente.nombre,
         "edad": cliente.edad,
-        "plan": cliente.plan
+        "plan": cliente.plan,
+        "estado": "ACTIVO"
     }
 
     clientes.append(cliente_dict)
     guardar_datos(datos)
 
-'''
+#-----------------------------------------------------------------------------------------------------------------------------
+
 def eliminar_cliente(cliente_id: int):
-    """Elimina un cliente del gimnasio por su ID."""
+    """Elimina un cliente del gimnasio por su ID y finaliza sus reservas activas."""
     
     datos = cargar_datos()
     clientes = datos["gimnasio"]["clientes"]
+    reservas = datos["gimnasio"].get("reservas", [])
 
     # Buscar y eliminar el cliente
     cliente_encontrado = False
-    for i, c in enumerate(clientes):
+    for c in clientes:
         if c["id"] == cliente_id:
-            del clientes[i]
+            c["estado"] = "INACTIVO"
             cliente_encontrado = True
+            # Finalizar reservas activas del cliente
+            for r in reservas:
+                if r["cliente_id"] == cliente_id and r["estado"] == "ACTIVA":
+                    r["estado"] = "CANCELADA"
             break
-
     if not cliente_encontrado:
         raise Exception("No se encontró un cliente con ese ID.")
 
     guardar_datos(datos)
-    '''
+    return f"Cliente con ID {cliente_id} eliminado y sus reservas activas finalizadas."
+
 
 #-----------------------------------------------------------------------------------------------------------------------------
 
@@ -131,7 +138,7 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     # Buscar cliente
     cliente = None
     for c in clientes:
-        if c["id"] == cliente_id:
+        if c["id"] == cliente_id and c["estado"] == "ACTIVO":
             cliente = c
             break
     if cliente is None:
@@ -233,6 +240,8 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
 
     return f"Reserva exitosa para {cliente['nombre']} en {recurso['nombre']} el {fecha_evento} en el turno {turno}."
 
+#-----------------------------------------------------------------------------------------------------------------------------
+
 def actualizar_estado(datos):
     ahora = datetime.now()
     reservas = datos["gimnasio"].get("reservas", [])
@@ -251,6 +260,8 @@ def actualizar_estado(datos):
         elif ahora >= fin:
             r["estado"] = "FINALIZADA"
 
+#-----------------------------------------------------------------------------------------------------------------------------
+
 def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno: str, reserva_id: int):
     datos = cargar_datos()
     clientes = datos["gimnasio"]["clientes"]
@@ -261,7 +272,7 @@ def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     # Buscar cliente
     cliente = None
     for c in clientes:
-        if c["id"] == cliente_id:
+        if c["id"] == cliente_id and c["estado"] == "ACTIVO":
             cliente = c
             break
     if cliente is None:
@@ -301,6 +312,8 @@ def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
             guardar_datos(datos)
             return f"Reserva cancelada para {cliente['nombre']} en {recurso['nombre']} el {fecha_evento} en el turno {turno}."
         
+
+#---------------------------------------------------------------------------------------------------------------------------
 
 def cancelar_reserva(reserva_id: int):
     '''Cancela la reserva segun el id de la reserva'''

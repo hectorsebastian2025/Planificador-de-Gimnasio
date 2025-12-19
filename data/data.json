@@ -190,43 +190,71 @@
                 "id": 1,
                 "nombre": "Manuel Serrano",
                 "edad": 25,
-                "plan": "Básico"
+                "plan": "Básico",
+                "estado": "INACTIVO"
             },
             {
                 "id": 2,
                 "nombre": "Lili Chacon",
                 "edad": 47,
-                "plan": "Premium"
+                "plan": "Premium",
+                "estado": "ACTIVO"
             },
             {
                 "id": 3,
                 "nombre": "Aylen Chang",
                 "edad": 16,
-                "plan": "Premium"
+                "plan": "Premium",
+                "estado": "ACTIVO"
             },
             {
                 "id": 4,
                 "nombre": "Estefany Rodriguez",
                 "edad": 25,
-                "plan": "Básico con entrenador"
+                "plan": "Básico con entrenador",
+                "estado": "ACTIVO"
             },
             {
                 "id": 5,
                 "nombre": "Giulio",
                 "edad": 24,
-                "plan": "Premium"
+                "plan": "Premium",
+                "estado": "INACTIVO"
             },
             {
                 "id": 6,
                 "nombre": "Jian",
                 "edad": 19,
-                "plan": "Básico con entrenador"
+                "plan": "Básico con entrenador",
+                "estado": "ACTIVO"
             },
             {
                 "id": 7,
                 "nombre": "Guille",
                 "edad": 19,
-                "plan": "Premium"
+                "plan": "Premium",
+                "estado": "ACTIVO"
+            },
+            {
+                "id": 8,
+                "nombre": "Aure",
+                "edad": 19,
+                "plan": "Premium",
+                "estado": "ACTIVO"
+            },
+            {
+                "id": 9,
+                "nombre": "Comepizza",
+                "edad": 22,
+                "plan": "Premium",
+                "estado": "ACTIVO"
+            },
+            {
+                "id": 10,
+                "nombre": "Guanajo",
+                "edad": 22,
+                "plan": "Básico con entrenador",
+                "estado": "INACTIVO"
             }
         ],
         "reservas": [
@@ -234,105 +262,17 @@
                 "id": 1,
                 "cliente_id": 2,
                 "recurso_id": 1,
-                "fecha": "2025-12-14",
-                "turno": "18:00-20:00",
-                "estado": "EN_CURSO"
+                "fecha": "2025-12-20",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA"
             },
             {
                 "id": 2,
-                "cliente_id": 5,
-                "recurso_id": 5,
-                "fecha": "2025-12-18",
-                "turno": "14:00-16:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 3,
-                "cliente_id": 5,
-                "recurso_id": 4,
-                "fecha": "2025-12-16",
-                "turno": "12:00-14:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 4,
-                "cliente_id": 1,
-                "recurso_id": 5,
-                "fecha": "2025-12-19",
-                "turno": "14:00-16:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 5,
-                "cliente_id": 4,
-                "recurso_id": 5,
-                "fecha": "2025-12-15",
+                "cliente_id": 10,
+                "recurso_id": 2,
+                "fecha": "2025-12-20",
                 "turno": "08:00-10:00",
                 "estado": "CANCELADA"
-            },
-            {
-                "id": 6,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-15",
-                "turno": "14:00-16:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 7,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-15",
-                "turno": "12:00-14:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 8,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-15",
-                "turno": "16:00-18:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 9,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-15",
-                "turno": "18:00-20:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 10,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-16",
-                "turno": "08:00-10:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 11,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-16",
-                "turno": "10:00-12:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 12,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-16",
-                "turno": "12:00-14:00",
-                "estado": "CANCELADA"
-            },
-            {
-                "id": 13,
-                "cliente_id": 4,
-                "recurso_id": 2,
-                "fecha": "2025-12-16",
-                "turno": "14:00-16:00",
-                "estado": "ACTIVA"
             }
         ]
     }
