@@ -76,7 +76,7 @@
                 "tipo": "consultorio",
                 "nombre": "Consultorio médico",
                 "capacidad": 1,
-                "tiempo_estancia_horas": 1,
+                "tiempo_estancia_horas": 2,
                 "ocupación_actual": 0
             },
             {
@@ -84,60 +84,43 @@
                 "tipo": "especial",
                 "nombre": "Cámara hiperbárica",
                 "capacidad": 1,
-                "tiempo_estancia_horas": 1,
+                "tiempo_estancia_horas": 2,
+                "ocupación_actual": 0
+            },
+            {
+                "id": 10,
+                "tipo": "nutricionista",
+                "nombre": "Nutricionista",
+                "capacidad": 1,
+                "tiempo_estancia_horas": 2,
                 "ocupación_actual": 0
             }
         ],
         "personal": [
             {
                 "id": 1,
-                "rol": "Entrenador",
-                "máx_clientes": 10,
+                "rol": "Fisioterapeuta",
+                "máx_clientes": 1,
                 "clientes_actuales": 0
             },
             {
                 "id": 2,
-                "rol": "Entrenador",
-                "máx_clientes": 10,
-                "clientes_actuales": 0
-            },
-            {
-                "id": 3,
-                "rol": "Entrenador",
-                "máx_clientes": 10,
-                "clientes_actuales": 0
-            },
-            {
-                "id": 4,
-                "rol": "Entrenador",
-                "máx_clientes": 10,
-                "clientes_actuales": 0
-            },
-            {
-                "id": 5,
-                "rol": "Fisioterapeuta",
-                "máx_clientes": 1,
-                "clientes_actuales": 0
-            },
-            {
-                "id": 6,
-                "rol": "Fisioterapeuta",
-                "máx_clientes": 1,
-                "clientes_actuales": 0
-            },
-            {
-                "id": 7,
                 "rol": "médico del deporte",
                 "máx_clientes": 1,
                 "clientes_actuales": 0
             },
             {
-                "id": 8,
+                "id": 4,
                 "rol": "Nutricionista",
                 "máx_clientes": 1,
                 "clientes_actuales": 0
             }
         ],
+        "MAPA_DE_ROLES": {
+            "Sala de fisioterapia": "Fisioterapeuta",
+            "Consultorio médico": "médico del deporte",
+            "Nutricionista": "Nutricionista"
+        },
         "planes": [
             {
                 "nombre": "Básico",
@@ -174,6 +157,7 @@
                     "Sala de fisioterapia",
                     "Jacuzzi",
                     "Consultorio médico",
+                    "Nutricionista",
                     "Cámara hiperbárica"
                 ]
             }
@@ -247,7 +231,7 @@
                 "nombre": "Comepizza",
                 "edad": 22,
                 "plan": "Premium",
-                "estado": "ACTIVO"
+                "estado": "INACTIVO"
             },
             {
                 "id": 10,
@@ -255,24 +239,192 @@
                 "edad": 22,
                 "plan": "Básico con entrenador",
                 "estado": "INACTIVO"
+            },
+            {
+                "id": 11,
+                "nombre": "Hector",
+                "edad": 57,
+                "plan": "Premium",
+                "estado": "ACTIVO"
             }
         ],
         "reservas": [
             {
                 "id": 1,
                 "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2025-12-20",
+                "recurso_id": 3,
+                "fecha": "2026-01-15",
                 "turno": "08:00-10:00",
                 "estado": "ACTIVA"
             },
             {
                 "id": 2,
-                "cliente_id": 10,
-                "recurso_id": 2,
-                "fecha": "2025-12-20",
+                "cliente_id": 7,
+                "recurso_id": 6,
+                "fecha": "2026-01-18",
                 "turno": "08:00-10:00",
-                "estado": "CANCELADA"
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 3,
+                "cliente_id": 11,
+                "recurso_id": 2,
+                "fecha": "2026-01-18",
+                "turno": "12:00-14:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 4,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "18:00-20:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 5,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 6,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "12:00-14:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 7,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "14:00-16:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 8,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "16:00-18:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 9,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 10,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 11,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "12:00-14:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 12,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "14:00-16:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 13,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "16:00-18:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 14,
+                "cliente_id": 6,
+                "recurso_id": 1,
+                "fecha": "2026-01-15",
+                "turno": "18:00-20:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 15,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-21",
+                "turno": "18:00-20:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 16,
+                "cliente_id": 2,
+                "recurso_id": 2,
+                "fecha": "2026-01-21",
+                "turno": "16:00-18:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 17,
+                "cliente_id": 2,
+                "recurso_id": 6,
+                "fecha": "2026-01-21",
+                "turno": "14:00-16:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 18,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-21",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 19,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-21",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 20,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-01-21",
+                "turno": "12:00-14:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 21,
+                "cliente_id": 2,
+                "recurso_id": 10,
+                "fecha": "2026-01-17",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA"
+            },
+            {
+                "id": 22,
+                "cliente_id": 8,
+                "recurso_id": 6,
+                "fecha": "2026-01-16",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA",
+                "personal_necesario": "Fisioterapeuta"
             }
         ]
     }

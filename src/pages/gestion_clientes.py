@@ -21,7 +21,7 @@ if len(clientes_activos) == 0:
 else:
     st.subheader("Selecciona un cliente")
 
-    # Solo selectbox, sin buscador por ID
+    # Selectbox
     opciones = {}
     for c in clientes_activos:
         label = f"{c['nombre']} (ID {c['id']})"
@@ -32,10 +32,24 @@ else:
 
     st.write(f"Cliente seleccionado: **{seleccion}**")
 
+    # Buscar cliente seleccionado
+    cliente_seleccionado = None
+    for c in clientes_activos:
+        if c["id"] == cliente_id:
+            cliente_seleccionado = c
+            break
+
+    # Mostrar detalles del cliente
+    st.write("### 📋 Detalles del cliente")
+    st.write(f"**ID:** {cliente_seleccionado['id']}")
+    st.write(f"**Nombre:** {cliente_seleccionado['nombre']}")
+    st.write(f"**Edad:** {cliente_seleccionado.get('edad', 'No registrada')}")
+    st.write(f"**Plan:** {cliente_seleccionado.get('plan', 'No asignado')}")
+
     if st.button("Eliminar cliente", type="primary"):
         st.session_state["cliente_a_eliminar"] = cliente_id
 
-# 🟡 Zona de confirmación
+# Zona de confirmación
 if st.session_state["cliente_a_eliminar"] is not None:
     st.warning(
         f"¿Seguro que deseas eliminar al cliente con ID {st.session_state['cliente_a_eliminar']}?",

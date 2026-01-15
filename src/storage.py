@@ -1,6 +1,6 @@
 import json
 import os
-from models import Cliente, Recurso, Personal, Plan, Evento
+from models import Cliente, Recurso, Personal
 from datetime import datetime, timedelta
 
 # Esto es la ruta de de este archivo
@@ -226,6 +226,30 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     if len(reservas) > 0:
         nuevo_id = reservas[-1]["id"] + 1
 
+    neces_personal = False
+    rol_necesario = None
+    for e in datos["gimnasio"]["MAPA_DE_ROLES"].keys():
+        if e == recurso["nombre"]:
+            neces_personal = True
+            rol_necesario = datos["gimnasio"]["MAPA_DE_ROLES"][e]
+            break
+
+    personal_disponible = True
+    if neces_personal:
+        for p in reservas:
+            if (
+                p["estado"] == "ACTIVA" and
+                p.get("personal_necesario") == rol_necesario and 
+                p["fecha"] == fecha_evento and 
+                p["turno"] == turno
+            ):
+                personal_disponible = False
+                break
+        if not personal_disponible:
+            raise Exception(f"No hay personal disponible con el rol '{rol_necesario}' para asistir al cliente.")
+    
+
+
     # Registrar la reserva
     reserva = {
         "id": nuevo_id,
@@ -235,6 +259,8 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
         "turno": turno,
         "estado": "ACTIVA"
     }
+    if personal_disponible:
+        reserva["personal_necesario"] = rol_necesario
     reservas.append(reserva)
     guardar_datos(datos)
 
@@ -332,4 +358,91 @@ def cancelar_reserva(reserva_id: int):
         return f"Reserva con ID {reserva_id} cancelada."
     
     raise Exception("No se encontró una reserva con ese ID.")
+
+#---------------------------------------------------------------------------------------------------------------------------
+
+def alternativa_reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno: str):
+    """Busca alternativas de reserva cuando no hay disponibilidad"""
+
+    datos = cargar_datos()
+    reservas = datos["gimnasio"].get("reservas", [])
+    recursos = datos["gimnasio"]["recursos"]
+    turnos_disponibles = datos["gimnasio"]["horario"]["turnos"]
+
+    # Buscar recurso
+    recurso = None
+    for r in recursos:
+        if r["id"] == recurso_id:
+            recurso = r
+            break
+
+    if recurso is None:
+        raise Exception("Recurso no encontrado")
+
+    fecha_base = datetime.strptime(fecha_evento, "%Y-%m-%d")
+    hoy = datetime.now()
+    fecha_max = hoy + timedelta(days=7)
+
+    alternativas = []
+    MAX_ALTERNATIVAS = 3
+
+    dias = 0
+    while dias <= 7 and len(alternativas) < MAX_ALTERNATIVAS:
+        fecha_eval = fecha_base + timedelta(days=dias)
+        fecha_str = fecha_eval.strftime("%Y-%m-%d")
+
+        if fecha_eval > fecha_max:
+            break
+
+        for t in turnos_disponibles:
+            if t == turno and dias == 0:
+                continue
+
+            # Validar que el turno no esté en el pasado
+            hora_inicio = t.split("-")[0]
+            inicio_turno = datetime.strptime(
+                f"{fecha_str} {hora_inicio}", "%Y-%m-%d %H:%M"
+            )
+
+            if inicio_turno <= hoy:
+                continue
+
+            # Validar que el cliente no tenga reserva en ese turno
+            conflicto_cliente = False
+            for r in reservas:
+                if (
+                    r["estado"] == "ACTIVA" and
+                    r["cliente_id"] == cliente_id and
+                    r["fecha"] == fecha_str and
+                    r["turno"] == t
+                ):
+                    conflicto_cliente = True
+                    break
+
+            if conflicto_cliente:
+                continue
+
+            # Calcular ocupación del recurso
+            ocupacion = 0
+            for r in reservas:
+                if (
+                    r["estado"] == "ACTIVA" and
+                    r["recurso_id"] == recurso_id and
+                    r["fecha"] == fecha_str and
+                    r["turno"] == t
+                ):
+                    ocupacion += 1
+
+            if ocupacion < recurso["capacidad"]:
+                alternativas.append((fecha_str, t))
+
+            if len(alternativas) >= MAX_ALTERNATIVAS:
+                break
+
+        dias += 1
+
+    return alternativas
+
+
+
 

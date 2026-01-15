@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import date, timedelta
-from storage import cargar_objetos, guardar_datos, cargar_datos, reservar_recurso, actualizar_estado
+from storage import cargar_objetos, guardar_datos, cargar_datos, reservar_recurso, actualizar_estado, alternativa_reservar_recurso
 
 datos = cargar_datos()
 actualizar_estado(datos)
@@ -51,9 +51,30 @@ else:
 turno = st.selectbox("Selecciona el turno:", turnos)
 if st.button("Reservar recurso"):
     try:
-        reservar_recurso(cliente_id, recurso_id, fecha_evento.strftime("%Y-%m-%d"), turno)
-        st.success(f"Recurso reservado para el cliente '{cliente_seleccionado}' el {fecha_evento} en el turno '{turno}'.")
+        reservar_recurso(
+            cliente_id,
+            recurso_id,
+            fecha_evento.strftime("%Y-%m-%d"),
+            turno
+        )
+        st.success(
+            f"Recurso reservado para el cliente '{cliente_seleccionado}' "
+            f"el {fecha_evento} en el turno '{turno}'."
+        )
+
     except Exception as e:
         st.error(f"Error al reservar el recurso: {str(e)}")
 
+        alternativas = alternativa_reservar_recurso(
+            cliente_id,
+            recurso_id,
+            fecha_evento.strftime("%Y-%m-%d"),
+            turno
+        )
 
+        if len(alternativas) == 0:
+            st.info("No hay alternativas disponibles.")
+        else:
+            st.subheader("Alternativas sugeridas:")
+            for alt in alternativas:
+                st.write(f"📅 {alt[0]} ⏰ {alt[1]}")
