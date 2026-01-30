@@ -14,21 +14,31 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
+
+# --- 6. Sidebar personalizado ---
 if st.sidebar.button("Menú Principal"):
-    st.switch_page("./app_streamlit.py")
-st.sidebar.write("Sección de clientes:")
-with st.sidebar.expander("Clientes"):
+    st.switch_page("app_streamlit.py")
 
-    if st.button("Registro de clientes"):
+
+st.sidebar.markdown("---")
+
+with st.sidebar:
+    st.markdown("### Sección de Clientes")
+    if st.button("📝 Registro de Clientes", key="sidebar_registro"):
         st.switch_page("pages/clientes_registro.py")
-
-    if st.button("Gestión de clientes"):
+    if st.button("📋 Gestión de Clientes", key="sidebar_gestion"):
         st.switch_page("pages/gestion_clientes.py")
 
-st.sidebar.write("Sección de eventos:")
 
-if st.sidebar.button("Gestión de eventos"):
-    st.switch_page("pages/eventos.py")
+
+with st.sidebar:
+    st.markdown("### Sección de Eventos")
+    if st.button("📅 Reservación de Evento", key="sidebar_reservar"):
+        st.switch_page("pages/eventos.py")
+    if st.button("🎯 Gestión de Eventos", key="sidebar_eventos"):
+        st.switch_page("pages/gestion_eventos.py")
+
+st.sidebar.markdown("---")
 
 
 # Vamos a cargar los datos
