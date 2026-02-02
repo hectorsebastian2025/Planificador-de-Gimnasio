@@ -341,26 +341,6 @@ def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
 
 #---------------------------------------------------------------------------------------------------------------------------
 
-def cancelar_reserva(reserva_id: int):
-    '''Cancela la reserva segun el id de la reserva'''
-    
-    datos = cargar_datos()
-    reservas = datos["gimnasio"]["reservas"]
-
-    for r in reservas:
-        if r["id"] == reserva_id:
-            if r["estado"] != "ACTIVA":
-                raise Exception("Solo se pueden cancelar reservas activas.")
-
-            r["estado"] = "CANCELADO"
-
-        guardar_datos(datos)
-        return f"Reserva con ID {reserva_id} cancelada."
-    
-    raise Exception("No se encontró una reserva con ese ID.")
-
-#---------------------------------------------------------------------------------------------------------------------------
-
 def alternativa_reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno: str):
     """Busca alternativas de reserva cuando no hay disponibilidad"""
 
