@@ -238,7 +238,7 @@
                 "nombre": "Hector",
                 "edad": 57,
                 "plan": "Premium",
-                "estado": "ACTIVO"
+                "estado": "INACTIVO"
             },
             {
                 "id": 12,
@@ -253,186 +253,30 @@
                 "edad": 20,
                 "plan": "Premium",
                 "estado": "ACTIVO"
-            }
-        ],
-        "reservas": [
-            {
-                "id": 1,
-                "cliente_id": 2,
-                "recurso_id": 3,
-                "fecha": "2026-01-15",
-                "turno": "08:00-10:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 2,
-                "cliente_id": 7,
-                "recurso_id": 6,
-                "fecha": "2026-01-18",
-                "turno": "08:00-10:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 3,
-                "cliente_id": 11,
-                "recurso_id": 2,
-                "fecha": "2026-01-18",
-                "turno": "12:00-14:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 4,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "18:00-20:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 5,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "10:00-12:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 6,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "12:00-14:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 7,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "14:00-16:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 8,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "16:00-18:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 9,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "08:00-10:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 10,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "10:00-12:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 11,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "12:00-14:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 12,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "14:00-16:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 13,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "16:00-18:00",
-                "estado": "FINALIZADA"
             },
             {
                 "id": 14,
-                "cliente_id": 6,
-                "recurso_id": 1,
-                "fecha": "2026-01-15",
-                "turno": "18:00-20:00",
-                "estado": "FINALIZADA"
+                "nombre": "Caliente",
+                "edad": 14,
+                "plan": "Básico",
+                "estado": "ACTIVO"
             },
             {
                 "id": 15,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-21",
-                "turno": "18:00-20:00",
-                "estado": "FINALIZADA"
+                "nombre": "Caliente",
+                "edad": 14,
+                "plan": "Básico",
+                "estado": "ACTIVO"
             },
             {
                 "id": 16,
-                "cliente_id": 2,
-                "recurso_id": 2,
-                "fecha": "2026-01-21",
-                "turno": "16:00-18:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 17,
-                "cliente_id": 2,
-                "recurso_id": 6,
-                "fecha": "2026-01-21",
-                "turno": "14:00-16:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 18,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-21",
-                "turno": "08:00-10:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 19,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-21",
-                "turno": "10:00-12:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 20,
-                "cliente_id": 2,
-                "recurso_id": 1,
-                "fecha": "2026-01-21",
-                "turno": "12:00-14:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 21,
-                "cliente_id": 2,
-                "recurso_id": 10,
-                "fecha": "2026-01-17",
-                "turno": "08:00-10:00",
-                "estado": "FINALIZADA"
-            },
-            {
-                "id": 22,
-                "cliente_id": 8,
-                "recurso_id": 6,
-                "fecha": "2026-01-16",
-                "turno": "08:00-10:00",
-                "estado": "CANCELADA",
-                "personal_necesario": "Fisioterapeuta"
-            },
+                "nombre": "Croqueta",
+                "edad": 25,
+                "plan": "Premium",
+                "estado": "ACTIVO"
+            }
+        ],
+        "reservas": [
             {
                 "id": 23,
                 "cliente_id": 12,
@@ -457,6 +301,33 @@
                 "recurso_id": 9,
                 "fecha": "2026-01-25",
                 "turno": "14:00-16:00",
+                "estado": "CANCELADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 26,
+                "cliente_id": 16,
+                "recurso_id": 1,
+                "fecha": "2026-02-04",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 27,
+                "cliente_id": 16,
+                "recurso_id": 9,
+                "fecha": "2026-02-04",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 28,
+                "cliente_id": 11,
+                "recurso_id": 9,
+                "fecha": "2026-02-04",
+                "turno": "08:00-10:00",
                 "estado": "CANCELADA",
                 "personal_necesario": null
             }

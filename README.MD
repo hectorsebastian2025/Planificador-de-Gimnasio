@@ -18,8 +18,8 @@ El gimnasio cuenta con un equipo multidisciplinario compuesto por entrenadores, 
 | Sauna | 15 |
 | Sala de fisioterapia | 2 |
 | Jacuzzi | 10 |
-| Consultorio médico | 2 |
-| Cámara hiperbárica | 2 |
+| Consultorio médico | 1 |
+| Cámara hiperbárica | 1 |
 | Nutricionista | 2 |
 
 ---
