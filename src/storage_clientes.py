@@ -1,5 +1,3 @@
-import json
-import os
 from models import Cliente
 from storage import cargar_datos, guardar_datos
 

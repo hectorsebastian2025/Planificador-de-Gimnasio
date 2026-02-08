@@ -1,6 +1,3 @@
-import json
-import os
-from models import Cliente, Recurso, Personal
 from datetime import datetime, timedelta
 from storage import cargar_datos, guardar_datos
 

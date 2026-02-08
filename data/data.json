@@ -344,7 +344,7 @@
                 "recurso_id": 1,
                 "fecha": "2026-02-07",
                 "turno": "18:00-20:00",
-                "estado": "EN_CURSO",
+                "estado": "FINALIZADA",
                 "personal_necesario": null
             },
             {
@@ -353,7 +353,7 @@
                 "recurso_id": 1,
                 "fecha": "2026-02-07",
                 "turno": "18:00-20:00",
-                "estado": "EN_CURSO",
+                "estado": "FINALIZADA",
                 "personal_necesario": null
             },
             {
@@ -362,7 +362,7 @@
                 "recurso_id": 4,
                 "fecha": "2026-02-07",
                 "turno": "18:00-20:00",
-                "estado": "EN_CURSO",
+                "estado": "FINALIZADA",
                 "personal_necesario": null
             },
             {
@@ -371,7 +371,7 @@
                 "recurso_id": 9,
                 "fecha": "2026-02-07",
                 "turno": "18:00-20:00",
-                "estado": "EN_CURSO",
+                "estado": "FINALIZADA",
                 "personal_necesario": null
             },
             {
@@ -398,7 +398,16 @@
                 "recurso_id": 10,
                 "fecha": "2026-02-08",
                 "turno": "08:00-10:00",
-                "estado": "ACTIVA",
+                "estado": "CANCELADA",
+                "personal_necesario": "Nutricionista"
+            },
+            {
+                "id": 36,
+                "cliente_id": 3,
+                "recurso_id": 10,
+                "fecha": "2026-02-08",
+                "turno": "10:00-12:00",
+                "estado": "CANCELADA",
                 "personal_necesario": "Nutricionista"
             }
         ]
