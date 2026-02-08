@@ -1,6 +1,7 @@
 import streamlit as st
-from storage import cargar_objetos, guardar_datos, cargar_datos, agregar_cliente, actualizar_estado
+from storage import cargar_objetos, guardar_datos, cargar_datos, actualizar_estado
 from models import Cliente
+from storage_clientes import agregar_cliente, eliminar_cliente
 
 datos = cargar_datos()
 actualizar_estado(datos)
@@ -12,7 +13,6 @@ st.markdown("""
     [data-testid="stSidebarNav"] {display: none;}
 </style>
 """, unsafe_allow_html=True)
-
 
 
 # --- 6. Sidebar personalizado ---

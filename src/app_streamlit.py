@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from PIL import Image
-from storage import cargar_datos, actualizar_estado, guardar_datos
+from storage import cargar_datos, actualizar_estado, guardar_datos, contar_clientes, mostrar_capacidad_rec_actual
 
 datos = cargar_datos()
 actualizar_estado(datos)
@@ -37,20 +37,30 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-
-# Navegación entre páginas
-
-st.write("Sección de clientes:")
-
 col1, col2 = st.columns(2)
+
 with col1:
-    if st.button("Registrar cliente"):
-        st.switch_page("pages/clientes_registro.py")
-with col2:
-    if st.button("Gestión de clientes"):
-        st.switch_page("pages/gestion_clientes.py")
+    st.metric("👥 Clientes registrados", contar_clientes())
 
+st.divider()
 
+# ────────────── CAPACIDAD DE RECURSOS ──────────────
+st.subheader("📊 Capacidad actual de los recursos")
+
+dict_capacidad = mostrar_capacidad_rec_actual()
+
+for recurso, capacidad in dict_capacidad.items():
+    ocupacion, total = map(int, capacidad.split("/"))
+    porcentaje = ocupacion / total
+
+    col_left, col_right = st.columns([3, 1])
+
+    with col_left:
+        st.markdown(f"**{recurso}**")
+        st.progress(porcentaje)
+
+    with col_right:
+        st.markdown(f"### {ocupacion}/{total}")
 # --- 6. Sidebar personalizado ---
 st.sidebar.markdown("<h2 style='text-align: center; '> Menú Principal</h2>", unsafe_allow_html=True)
 
@@ -74,14 +84,3 @@ with st.sidebar:
         st.switch_page("pages/gestion_eventos.py")
 
 st.sidebar.markdown("---")
-
-st.write("Sección de eventos:")
-col1, col2 = st.columns(2)
-with col1:
-    if st.button("Reservar evento"):
-        st.switch_page("pages/eventos.py")
-    
-with col2:
-    if st.button("Gestión de Eventos"):
-        st.switch_page("pages/gestion_eventos.py")
-

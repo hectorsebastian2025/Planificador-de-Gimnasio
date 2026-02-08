@@ -1,5 +1,8 @@
 import streamlit as st
-from storage import cargar_datos, eliminar_cliente
+from storage import cargar_datos, actualizar_estado
+from storage_clientes import eliminar_cliente
+
+actualizar_estado(cargar_datos())  # Asegurarnos de que el estado esté actualizado al cargar la página
 
 # Ocultar completamente el sidebar original
 st.markdown("""
@@ -7,7 +10,6 @@ st.markdown("""
     [data-testid="stSidebarNav"] {display: none;}
 </style>
 """, unsafe_allow_html=True)
-
 
 
 # --- 6. Sidebar personalizado ---
@@ -23,7 +25,6 @@ with st.sidebar:
         st.switch_page("pages/clientes_registro.py")
     if st.button("📋 Gestión de Clientes", key="sidebar_gestion"):
         st.switch_page("pages/gestion_clientes.py")
-
 
 
 with st.sidebar:
@@ -94,7 +95,7 @@ if st.session_state["cliente_a_eliminar"] is not None:
     col1, col2 = st.columns(2)
 
     if col1.button("Sí, eliminar"):
-        from storage import eliminar_cliente
+
         try:
             msg = eliminar_cliente(st.session_state["cliente_a_eliminar"])
             st.success(msg)

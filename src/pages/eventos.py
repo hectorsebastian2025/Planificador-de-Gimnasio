@@ -1,6 +1,7 @@
 import streamlit as st
 from datetime import date, timedelta
-from storage import cargar_objetos, guardar_datos, cargar_datos, reservar_recurso, actualizar_estado, alternativa_reservar_recurso
+from storage import cargar_objetos, guardar_datos, cargar_datos, actualizar_estado
+from storage_eventos import reservar_recurso, alternativa_reservar_recurso
 
 datos = cargar_datos()
 actualizar_estado(datos)
@@ -16,8 +17,6 @@ st.markdown("""
     [data-testid="stSidebarNav"] {display: none;}
 </style>
 """, unsafe_allow_html=True)
-
-
 
 # --- 6. Sidebar personalizado ---
 if st.sidebar.button("Menú Principal"):

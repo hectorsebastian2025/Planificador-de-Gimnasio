@@ -245,7 +245,7 @@
                 "nombre": "lili2",
                 "edad": 47,
                 "plan": "Premium",
-                "estado": "ACTIVO"
+                "estado": "INACTIVO"
             },
             {
                 "id": 13,
@@ -272,6 +272,13 @@
                 "id": 16,
                 "nombre": "Croqueta",
                 "edad": 25,
+                "plan": "Premium",
+                "estado": "ACTIVO"
+            },
+            {
+                "id": 17,
+                "nombre": "Compay",
+                "edad": 18,
                 "plan": "Premium",
                 "estado": "ACTIVO"
             }
@@ -319,7 +326,7 @@
                 "recurso_id": 9,
                 "fecha": "2026-02-04",
                 "turno": "10:00-12:00",
-                "estado": "ACTIVA",
+                "estado": "FINALIZADA",
                 "personal_necesario": null
             },
             {
@@ -330,6 +337,69 @@
                 "turno": "08:00-10:00",
                 "estado": "CANCELADA",
                 "personal_necesario": null
+            },
+            {
+                "id": 29,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-02-07",
+                "turno": "18:00-20:00",
+                "estado": "EN_CURSO",
+                "personal_necesario": null
+            },
+            {
+                "id": 30,
+                "cliente_id": 3,
+                "recurso_id": 1,
+                "fecha": "2026-02-07",
+                "turno": "18:00-20:00",
+                "estado": "EN_CURSO",
+                "personal_necesario": null
+            },
+            {
+                "id": 31,
+                "cliente_id": 7,
+                "recurso_id": 4,
+                "fecha": "2026-02-07",
+                "turno": "18:00-20:00",
+                "estado": "EN_CURSO",
+                "personal_necesario": null
+            },
+            {
+                "id": 32,
+                "cliente_id": 12,
+                "recurso_id": 9,
+                "fecha": "2026-02-07",
+                "turno": "18:00-20:00",
+                "estado": "EN_CURSO",
+                "personal_necesario": null
+            },
+            {
+                "id": 33,
+                "cliente_id": 16,
+                "recurso_id": 1,
+                "fecha": "2026-02-08",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 34,
+                "cliente_id": 2,
+                "recurso_id": 9,
+                "fecha": "2026-02-08",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 35,
+                "cliente_id": 3,
+                "recurso_id": 10,
+                "fecha": "2026-02-08",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA",
+                "personal_necesario": "Nutricionista"
             }
         ]
     }
