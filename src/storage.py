@@ -17,8 +17,6 @@ def cargar_datos():
     with open(RUTA_DATOS, "r", encoding="utf-8") as archivo:
         return json.load(archivo)
     
-print("RUTA:", RUTA_DATOS)
-print("Existe:", os.path.exists(RUTA_DATOS))
 
 def guardar_datos(datos):
     '''Guarda los datos en el json'''
@@ -102,9 +100,3 @@ def actualizar_estado(datos):
             r["estado"] = "EN_CURSO"
         elif ahora >= fin:
             r["estado"] = "FINALIZADA"
-
-#----------------------------------------------------------------------------------------------------------------------------
-
-
-
-

@@ -2,7 +2,9 @@ import streamlit as st
 from storage import cargar_datos, guardar_datos, actualizar_estado
 
 
-actualizar_estado(cargar_datos())  # Asegurarnos de que el estado esté actualizado al cargar la página
+datos_actualizados = cargar_datos()
+actualizar_estado(datos_actualizados)  # Asegurarnos de que el estado esté actualizado al cargar la página
+guardar_datos(datos_actualizados)
 
 # --- Cargar datos ---
 datos = cargar_datos()

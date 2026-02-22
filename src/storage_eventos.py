@@ -145,7 +145,7 @@ def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
     datos = cargar_datos()
     clientes = datos["gimnasio"]["clientes"]
     reservas = datos["gimnasio"]["reservas"]
-    recursos = datos["recursos"]
+    recursos = datos["gimnasio"]["recursos"]
     turnos_disponibles = datos["gimnasio"]["horario"]["turnos"]
 
     # Buscar cliente
