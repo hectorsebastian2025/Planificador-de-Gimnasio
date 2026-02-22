@@ -6,7 +6,8 @@
 El gimnasio cuenta con un equipo multidisciplinario compuesto por entrenadores, fisioterapeutas, médicos deportivos y nutricionistas, enfocados en ayudar a los clientes a alcanzar su mejor versión.
 
 Para ejecutar la app ejecute el siguiente enlace:
-streamlit run c:\CC\Proyectos\planificador_gimnasio\src\app_streamlit.py [ARGUMENTS]
+
+streamlit run src/app_streamlit.py
 
 ---
 
