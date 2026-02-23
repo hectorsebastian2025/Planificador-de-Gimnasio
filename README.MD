@@ -80,7 +80,7 @@ La interfaz se desarrolló con **Streamlit**, por ser una herramienta intuitiva,
 
 ## 👤 Registro de Clientes
 - Cada cliente registrado recibe un **ID único**
-- Capacidad total del gimnasio: **700 personas**
+- Capacidad total del gimnasio: **200 personas**
 
 ### Restricción
 - No se permite el registro de nuevos clientes si la capacidad máxima del gimnasio ha sido alcanzada

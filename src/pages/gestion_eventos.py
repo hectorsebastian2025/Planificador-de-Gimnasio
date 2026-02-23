@@ -1,5 +1,6 @@
 import streamlit as st
 from storage import cargar_datos, guardar_datos, actualizar_estado
+from storage_eventos import eliminar_reserva
 
 
 datos_actualizados = cargar_datos()
@@ -90,12 +91,9 @@ else:
                 st.warning("¿Seguro que quieres cancelar esta reserva?")
                 c_yes, c_no = st.columns(2)
                 if c_yes.button("Sí", key=f"si_{r['id']}"):
-                    for res in reservas:
-                        if res["id"] == r["id"]:
-                            res["estado"] = "CANCELADA"
-                            guardar_datos(datos)
-                            st.success(f"Reserva ID {res['id']} cancelada correctamente.")
-                            break
+                    eliminar_reserva(cliente_id, r["id"]) # Llamamos a la función para eliminar la reserva
+                    st.success("Reserva cancelada exitosamente.")
+                    st.rerun()  # Recargamos la página para actualizar la lista de reservas
                     del st.session_state[f"confirmar_{r['id']}"]
                 if c_no.button("No", key=f"no_{r['id']}"):
                     st.info("Cancelación abortada.")

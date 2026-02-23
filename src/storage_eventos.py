@@ -141,57 +141,19 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
 
 #----------------------------------------------------------------------------------------------------------------------------
 
-def eliminar_reserva(cliente_id: int, recurso_id: int, fecha_evento: str, turno: str, reserva_id: int):
+def eliminar_reserva(cliente_id: int, reserva_id: int):
     datos = cargar_datos()
-    clientes = datos["gimnasio"]["clientes"]
-    reservas = datos["gimnasio"]["reservas"]
-    recursos = datos["gimnasio"]["recursos"]
-    turnos_disponibles = datos["gimnasio"]["horario"]["turnos"]
+    reservas = datos["gimnasio"].get("reservas", [])
 
-    # Buscar cliente
-    cliente = None
-    for c in clientes:
-        if c["id"] == cliente_id and c["estado"] == "ACTIVO":
-            cliente = c
-            break
-    if cliente is None:
-        raise Exception("Cliente no encontrado.")
-
-    #Buscar recurso
-    recurso = None
-    for r in recursos:
-        if r["id"] == recurso_id:
-            recurso = r
-            break
-    if recurso is None:
-        raise Exception("Recurso no encontrado.")
-
-    # Validar fecha
-    try:
-        datetime.strptime(fecha_evento, "%Y-%m-%d")
-    except ValueError:
-        raise Exception("Formato de fecha inválido. Usa 'YYYY-MM-DD'.")
-    
-    # Validar turno
-    if turno not in turnos_disponibles:
-        raise Exception(f"Turno inválido. Debe ser uno de: {turnos_disponibles}")
-
-    # Validar que existe el turno a eliminar
     for r in reservas:
-        if (
-            r["id"] == reserva_id and
-            r["cliente_id"] == cliente_id and 
-            r["recurso_id"] == recurso_id and 
-            r["fecha"] == fecha_evento and 
-            r["turno"] == turno
-        ):
-            if r["estado"] == "CANCELADA":
-                raise Exception("La reserva ya está cancelada.")
+        if r["id"] == reserva_id and r["cliente_id"] == cliente_id:
+            if r["estado"] != "ACTIVA":
+                raise Exception("La reserva no está activa.")
             r["estado"] = "CANCELADA"
             guardar_datos(datos)
-            return f"Reserva cancelada para {cliente['nombre']} en {recurso['nombre']} el {fecha_evento} en el turno {turno}."
-        
+            return "Reserva cancelada correctamente."
 
+    raise Exception("No se encontró la reserva.")
 #----------------------------------------------------------------------------------------------------------------------------
 
 def alternativa_reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno: str):

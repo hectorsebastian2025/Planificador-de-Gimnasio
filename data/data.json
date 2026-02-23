@@ -1,6 +1,6 @@
 {
     "gimnasio": {
-        "capacidad_máxima": 700,
+        "capacidad_máxima": 200,
         "horario": {
             "apertura": "08:00",
             "cierre": "20:00",
@@ -59,7 +59,7 @@
                 "id": 6,
                 "tipo": "terapia",
                 "nombre": "Sala de fisioterapia",
-                "capacidad": 2,
+                "capacidad": 1,
                 "tiempo_estancia_horas": 2,
                 "ocupación_actual": 0
             },
@@ -124,7 +124,6 @@
         "planes": [
             {
                 "nombre": "Básico",
-                "precio_mensual": 25,
                 "acceso": [
                     "Sala de musculación (sin entrenador)",
                     "Cancha de básket",
@@ -135,7 +134,6 @@
             },
             {
                 "nombre": "Básico con entrenador",
-                "precio_mensual": 40,
                 "acceso": [
                     "Sala de musculación (con entrenador)",
                     "Cancha de básket",
@@ -146,7 +144,6 @@
             },
             {
                 "nombre": "Premium",
-                "precio_mensual": 65,
                 "acceso": [
                     "Sala de musculación (sin entrenador)",
                     "Cancha de básket",
@@ -259,7 +256,7 @@
                 "nombre": "Caliente",
                 "edad": 14,
                 "plan": "Básico",
-                "estado": "ACTIVO"
+                "estado": "INACTIVO"
             },
             {
                 "id": 15,
@@ -280,7 +277,21 @@
                 "nombre": "Compay",
                 "edad": 18,
                 "plan": "Premium",
+                "estado": "INACTIVO"
+            },
+            {
+                "id": 18,
+                "nombre": "Liu",
+                "edad": 21,
+                "plan": "Premium",
                 "estado": "ACTIVO"
+            },
+            {
+                "id": 19,
+                "nombre": "Qeroro",
+                "edad": 25,
+                "plan": "Básico",
+                "estado": "INACTIVO"
             }
         ],
         "reservas": [
@@ -407,8 +418,98 @@
                 "recurso_id": 10,
                 "fecha": "2026-02-21",
                 "turno": "18:00-20:00",
-                "estado": "EN_CURSO",
+                "estado": "FINALIZADA",
                 "personal_necesario": "Nutricionista"
+            },
+            {
+                "id": 37,
+                "cliente_id": 18,
+                "recurso_id": 1,
+                "fecha": "2026-02-22",
+                "turno": "14:00-16:00",
+                "estado": "FINALIZADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 38,
+                "cliente_id": 4,
+                "recurso_id": 1,
+                "fecha": "2026-02-22",
+                "turno": "14:00-16:00",
+                "estado": "FINALIZADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 39,
+                "cliente_id": 15,
+                "recurso_id": 5,
+                "fecha": "2026-02-22",
+                "turno": "14:00-16:00",
+                "estado": "FINALIZADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 40,
+                "cliente_id": 15,
+                "recurso_id": 1,
+                "fecha": "2026-02-23",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 41,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-02-23",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 42,
+                "cliente_id": 2,
+                "recurso_id": 1,
+                "fecha": "2026-02-23",
+                "turno": "08:00-10:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 43,
+                "cliente_id": 4,
+                "recurso_id": 5,
+                "fecha": "2026-02-23",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 44,
+                "cliente_id": 4,
+                "recurso_id": 5,
+                "fecha": "2026-02-23",
+                "turno": "08:00-10:00",
+                "estado": "CANCELADA",
+                "personal_necesario": null
+            },
+            {
+                "id": 45,
+                "cliente_id": 15,
+                "recurso_id": 3,
+                "fecha": "2026-02-23",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
+            },
+            {
+                "id": 46,
+                "cliente_id": 16,
+                "recurso_id": 7,
+                "fecha": "2026-02-23",
+                "turno": "10:00-12:00",
+                "estado": "ACTIVA",
+                "personal_necesario": null
             }
         ]
     }
