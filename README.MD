@@ -98,6 +98,7 @@ Las reservas pueden realizarse desde el **momento actual hasta 7 días en el fut
 - Un cliente no puede tener más de una reserva en el mismo turno y fecha
 - No se permite reservar si la capacidad del recurso está completa
 - Si el recurso requiere personal y este no está disponible, la reserva se cancela
+- Si el cliente quiere reservar la cámara hiperbárica debe tener una cita previa en el consultorio médico para que el médico del deporte le de la autorización y pueda hacer uso del equipo
 
 ---
 

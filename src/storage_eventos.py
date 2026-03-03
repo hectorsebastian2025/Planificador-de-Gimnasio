@@ -122,6 +122,26 @@ def reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento: str, turno:
         if not personal_disponible:
             raise Exception(f"No hay personal disponible con el rol '{rol_necesario}' para asistir al cliente.")
     
+    if recurso_id == 9: # El id 9 es el id que le corresponde a la cámara hiperbárica
+        fecha_base = datetime.strptime(fecha_evento, "%Y-%m-%d")
+        fecha_inicio = fecha_base - timedelta(days=7)
+        autorizado = False
+
+        for r in reservas:
+            if (
+                r["cliente_id"] == cliente_id and
+                r["recurso_id"] == 8 and  # El 8 es el del consultorio
+                r["estado"] in ("FINALIZADA", "EN_CURSO")
+            ):
+                fecha_reserva = datetime.strptime(r["fecha"], "%Y-%m-%d")
+
+                if fecha_inicio <= fecha_reserva <= fecha_base:
+                    autorizado = True
+                    break
+
+        if not autorizado:
+            raise Exception(
+                "Para reservar la Cámara hiperbárica debes haber tenido una cita con el médico del deporte en los últimos 7 días.")
 
     # Registrar la reserva
     reserva = {
@@ -237,3 +257,4 @@ def alternativa_reservar_recurso(cliente_id: int, recurso_id: int, fecha_evento:
         dias += 1
 
     return alternativas
+
